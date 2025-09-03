@@ -1,6 +1,5 @@
 package tools;
 
-
 import javax.swing.JComponent;
 import javax.swing.JTextField;
 
@@ -8,16 +7,24 @@ import javax.swing.JTextField;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author u1845853
  */
 public class Util {
-    
-    public static void habilitar(boolean valor, JComponent ... componentes) {
+
+    public static void habilitar(boolean valor, JComponent... componentes) {
         for (int i = 0; i < componentes.length; i++) {
-            componentes[i].setEnabled(valor);            
+            componentes[i].setEnabled(valor);
+        }
+    }
+
+    public static void limpar(JComponent ... componentes) {
+        for (int i = 0; i < componentes.length; i++) {
+            //instanceof
+            ((JTextField) componentes[i]).setText("");
+            //setSelectedIndex(-1);
+
         }
     }
 }

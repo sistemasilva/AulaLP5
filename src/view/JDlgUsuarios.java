@@ -8,28 +8,21 @@ package view;
 import javax.swing.JOptionPane;
 import tools.Util;
 
-
 /**
  *
  * @author u10916731103
  */
 public class JDlgUsuarios extends javax.swing.JDialog {
 
-
-
-
     public JDlgUsuarios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Usuários");
         setLocationRelativeTo(null);
-        
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jCboNivel, jBtnIncluir);
-        
+
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jCboNivel, jChbAtivo, jFmtCpf, jFmtDataDeNascimento, jTxtApelido, jPwfSenha, jBtnConfirmar, jBtnCancelar);
 
     }
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -250,12 +243,16 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jCboNivel, jChbAtivo, jFmtCpf, jFmtDataDeNascimento, jTxtApelido, jPwfSenha, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.limpar(jTxtCodigo, jTxtNome, jTxtApelido, jCboNivel);
 
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+          Util.habilitar(true, jTxtCodigo, jTxtNome, jCboNivel, jChbAtivo, jFmtCpf, jFmtDataDeNascimento, jTxtApelido, jPwfSenha, jBtnConfirmar, jBtnCancelar);
+          Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
 
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
@@ -267,8 +264,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
- 
-
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jCboNivel, jChbAtivo, jFmtCpf, jFmtDataDeNascimento, jTxtApelido, jPwfSenha, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
 
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
@@ -280,6 +277,8 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jCboNivel, jChbAtivo, jFmtCpf, jFmtDataDeNascimento, jTxtApelido, jPwfSenha, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
 
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
